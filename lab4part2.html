@@ -1,0 +1,196 @@
+
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {font-family: Arial, Helvetica, sans-serif;}
+form {border: 3px solid #f1f1f1;}
+
+input[type=text], input[type=text] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+button {
+  background-color: #04AA6D;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+}
+
+button:hover {
+  opacity: 0.8;
+}
+
+.cancelbtn {
+  width: auto;
+  padding: 10px 18px;
+  background-color: #f44336;
+}
+
+.imgcontainer {
+  text-align: center;
+  margin: 24px 0 12px 0;
+}
+
+img.avatar {
+  width: 40%;
+  border-radius: 50%;
+}
+
+.container {
+  padding: 16px;
+}
+
+span.psw {
+  float: right;
+  padding-top: 16px;
+}
+
+/* Change styles for span and cancel button on extra small screens */
+@media screen and (max-width: 300px) {
+  span.psw {
+     display: block;
+     float: none;
+  }
+  .cancelbtn {
+     width: 100%;
+  }
+}
+</style>
+</head>
+<body>
+
+<h2>Login Form</h2>
+
+    <label for="uname"><b>First Name</b></label>
+    <input type="text" placeholder="Enter First Name" name="First Name"  id="First Name"  >
+
+    <label for="psw"><b>Last Name</b></label>
+    <input type="text" placeholder="Enter Last Name" name="Last Name" id="Last Name"  >
+    
+	<label for="psw"><b>Street Name</b></label>
+    <input type="text" placeholder="Enter Street Name" name="Street Name"  id="Street Name">
+	
+	<label for="psw"><b>City</b></label>
+    <input type="text" placeholder="City" name="City" id="City">
+	
+	<label for="psw"><b>Postal Code</b></label>
+    <input type="text" placeholder="Postal Code" name="Postal Code"  id="Postal Code">
+	
+	<label for="psw"><b>Email Address</b></label>
+    <input type="text" placeholder="Email Address" name="Email Address"  id="Email Address">
+	
+	<label for="psw"><b>Phone Number</b></label>
+    <input type="text" placeholder="Phone Number" name="Phone Number"  id="Phone Number">
+	
+	<label for="psw"><b>Password</b></label>
+    <input type="text" placeholder="Password" name="Password"  id="Password"><br>
+	<label for="psw"><b>Province</b></label>
+	
+<select name="Province" id="Province">
+  <option value="Alberta">Alberta</option>
+  <option value="British Columbia">British Columbia</option>
+  <option value="Manitoba">Manitoba</option>
+  <option value="New Brunswick">New Brunswick</option>
+  <option value="Newfoundland and Labrador">Newfoundland and Labrador</option>
+  <option value="Northwest Territories">Northwest Territories</option>
+  <option value="Nova Scotia">Nova Scotia</option>
+  <option value="Nunavut">Nunavut</option>
+  <option value="Prince Edward Island">Prince Edward Island</option>
+  <option value="Quebec">Quebec</option>
+  <option value="Saskatchewan">Saskatchewan</option>
+  <option value="Yukon">Yukon</option>
+
+</select><br>
+	
+	<label for="psw"><b>Gender</b></label><br>
+	<label for="psw"> Male</label>
+<input type="radio" id="Male" name="Male" value="Male"><br>
+<label for="psw"> Female</label>
+<input type="radio" id="Female" name="Female" value="Female">
+<input type="button" value="Submit" onclick="submit()">
+
+  
+<script>
+	
+	var firstName= document.getElementById("First Name");
+	
+	var lastName  = document.getElementById("Last Name");
+	
+	var streetName=document.getElementById("Street Name");
+	
+	var city = document.getElementById("City");
+	
+	var postalCode=document.getElementById("Postal Code");
+	
+	var emailAddress = document.getElementById("Email Address");
+	var phoneNumber = document.getElementById("Phone Number");
+	var password = document.getElementById("Password");
+	var province = document.getElementById("Province");
+	
+	var male = document.getElementById("Male");
+	
+	var female = document.getElementById("Female");
+	
+	function submit(){
+		
+		error=false;
+		
+		if (!phoneNumber.value.length == 10){
+			
+			document.write("The phone number must be 10 characters long");
+			error=true;
+		}
+		
+		for (var i = 0;i<=phoneNumber.value.length-1;i++){
+			
+			if(!Number.isInteger(parseInt(phoneNumber.value[i]))){
+				document.write("Only digits are allowed in phone number");
+				error=true;
+				break;
+			}
+		}
+		
+		
+		if (!postalCode.value.length == 10){
+			
+			document.write("The phone number must be 10 characters long");
+			error=true;
+		}
+		
+		
+		if(!error){
+			
+			document.write("First Name:"+firstName.value+"\n");
+			document.write("Last Name:"+lastName.value+"\n");
+			document.write("Street Name:"+streetName.value+"\n");
+			document.write("City:"+city.value+"\n");
+			document.write("Postal Code:"+postalCode.value+"\n");
+			document.write("Email Address:"+emailAddress.value+"\n");
+			document.write("Phone Number:"+phoneNumber.value+"\n");
+			document.write("Password:"+password.value+"\n");
+			document.write("Province:"+province.value+"\n");
+		}
+		
+		
+	}
+	
+	
+	
+
+</script>
+
+</body>
+</html>
+
+
+
+
