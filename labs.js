@@ -33,12 +33,7 @@ app.get('/lab5part1.html', function (req, res) {
 	
 });
 
-app.get('/lab5part2.html', function (req, res) {
-	
 
-	res.sendfile("lab5part2.html");
-	
-});
 
 
 
