@@ -1,0 +1,57 @@
+
+<html>
+	 Choose a location example:Ontario
+	<input type="text" id="location">
+	<br>
+	Choose a day example 09
+	<input type="text" id="day">
+	<br>
+	Choose a month example 09
+	<input type="text" id="month">
+	<br>
+	Choose a year example 2012
+	<input type="text" id="year">
+	<br>
+	<input type="button" onclick="submit()" value="Submit">
+	<div id="div">
+		
+	</div>
+   <script src="/socket.io/socket.io.js"></script>
+   <script>
+      var socket = io();
+	  
+	  var div = document.getElementById("div");
+	  var location = document.getElementById("location");
+	  var day = document.getElementById("day");
+	  var month = document.getElementById("month");
+	  var year = document.getElementById("year");
+	  
+	  function submit(){
+	  
+		socket.emit("event",[location.value,day.value,month.value,year.value]);
+	  
+	  }
+	  
+	  socket.on('display',function(data){
+		
+		div.innerHTMl="";
+		div.innerHTML+='<table>';
+	
+		div.innerHTML +='<td> URL:' + data[4] + '/n Location: ' + data[3] + '/n Subject: '+data[1]+ '</td><br>';
+		
+		
+		
+		div.innerHTML+='</table><br>';
+		
+	  });
+	  
+	  
+	  
+	  
+   </script>
+   
+   
+   
+   
+   
+</html>
